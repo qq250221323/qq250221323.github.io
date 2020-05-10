@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*全场控制*/
+*{moz-user-select: -moz-none;-moz-user-select: none;-o-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;}
+
+/*滚动条优化*/
+::-webkit-scrollbar { width:14px; height:14px;}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {border-radius: 999px;border: 5px solid transparent;}
+::-webkit-scrollbar-track {box-shadow: 1px 1px 5px rgba(255,255,255,.1) inset; width:1px;}
+::-webkit-scrollbar-thumb {min-height: 20px; background-clip: content-box; box-shadow: 0 0 0 5px rgba(120,120,160,.6) inset;}
+::-webkit-scrollbar-corner { background: transparent;}
+
+/*暴雪英文字体载入*/
+@font-face{font-family:"Blizzard";font-style:normal;font-weight:300;src:local("Blizzard Light"),local("Blizzard-Light"),url("https://www.battlenet.com.cn/login/static/css/toolkit/fonts/blizzard-light.woff") format("woff")}
+@font-face{font-family:"Blizzard";font-style:normal;font-weight:400;src:local("Blizzard"),local("Blizzard"),url("https://www.battlenet.com.cn/login/static/css/toolkit/fonts/blizzard-regular.woff") format("woff")}
+@font-face{font-family:"Blizzard";font-style:italic;font-weight:400;src:local("Blizzard Italic"),local("Blizzard-Italic"),url("https://www.battlenet.com.cn/login/static/css/toolkit/fonts/blizzard-regular-italic.woff") format("woff")}
+@font-face{font-family:"Blizzard";font-style:normal;font-weight:700;src:local("Blizzard Bold"),local("Blizzard-Bold"),url("https://www.battlenet.com.cn/login/static/css/toolkit/fonts/blizzard-bold.woff") format("woff")}
+
+/*主体css*/
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{ font:14px/14px "Blizzard", "微软雅黑";background:#efeeeb;color:#ddd; background:#0A1A3C url(https://g.fp.ps.netease.com/yys-vinci/file/57e1f26c143cfaf9f7b381f0Af03JmDk) top center no-repeat;  }
+.bgbg{width: 1920px; height: 1080px; position: fixed; top:50%; left: 50%; margin-top: -540px; margin-left: -960px; z-index: 1;}
+a,a:hover{text-decoration:none; color:#ddd;}
+hr{ height:1px; line-height:1px; border:none; border-bottom:1px solid #4A515C; clear:both; margin:10px auto;}
+.demo{ width:940px; height:480px; padding-top:60px; position:fixed; left:50%; top:50%; margin-top:-250px;  margin-left:-470px; background:#171e29 url(05.png) top center no-repeat; border:1px solid #2d3541;box-shadow:0 0 10px #06090E; z-index: 3;}
+.demoname{ position:absolute; top:18px; left:46px; font:18px/32px "Blizzard", "微软雅黑"; width:894px; height:32px;}
+.demoname .about{ position:absolute; right:20px; top:0; font-size:12px; color:#999; width:30px; height:30px; padding :0 2px 0 26px; background:url(06.png) 5px 5px no-repeat; border:1px solid transparent; line-height:30px;}
+.demoname .about .name{ cursor:default;}
+.demoname .about .abouthover{ width:258px; height: 0; display: none; opacity: 0; z-index:120; transition: all 0.15s; height:auto; overflow:hidden; position:absolute; right:-22px; top:24px; border:1px solid #333B47; padding:32px 16px 8px 16px; line-height:20px; font-size:12px; color:#999; background-color:#272e3b;box-shadow:0 0 2px #000;}
+.demoname .about .abouthover span{line-height:18px; font-size:14px; color:#eee; display:block; position:absolute; top:14px; left:-1px; width:240px; height:18px; border-left:2px solid #5A616C; padding-left:14px; z-index:100}
+.demoname .about .abouthover .dllink{color:#9bf;}
+.demoname .about .abouthover .dllink:hover{color:#acf; text-decoration:underline;}
+.demoname .about:hover { background-color:#272e3b; border:1px solid #333B47;box-shadow:0 0 2px #000; }
+.demoname .about:hover .about{ display:block;}
+.demoname .about .abouthover b{ color:#fff; font-weight:normal;}
+.demoname .about .abouthover a:link{ color:#9Ab4FE;}
+.demoname .download{position: absolute;right: 85px;top: 0;font-size: 12px;color: #999;width: 70px;height: 30px;padding: 0 2px 0 26px;background: url(07.png) 5px 5px no-repeat;border: 1px solid transparent; line-height:30px;}
+.demoname .download:hover { background-color:#272e3b; border:1px solid #333B47;box-shadow:0 0 2px #000; background: url(07h.png) 5px 5px no-repeat;}
+.demoname .download a{color:#68c;}
+.demoname .download:hover a{color:#9bf;}
+
+.datain{width:270px; height:372px; border-left:1px solid #2d3541; padding:108px 0 0 20px; background-color:#1D2633; float:right; position: relative;}
+
+/*下拉框输入选项*/
+.select{position:relative;float:left;margin:0; margin-top: 0px;}
+.select dt{width:160px;height:32px;display:inline-block;border:1px solid #333b47;background:#11171f url(02.png) no-repeat 165px center;line-height:32px;padding:0 10px;cursor: default;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;position:relative;z-index:99; font:14px/32px "Blizzard", "微软雅黑";}
+.select dt:hover, .select dt.cur{border:1px solid #409DFE;box-shadow:0 0 2px #409DFE;}
+.select dd{position:absolute;left:0;top:33px;border:1px solid #409DFE;box-shadow:0 0 2px #409DFE; border-top:none;background:#11171f;display:none; z-index:108;cursor: default;}
+.select dd ul{width:180px;padding:0;max-height:160px;overflow:auto;}
+.select dd ul li a{line-height:32px;display:block;padding:0 10px;}
+.select dd ul li a:hover{background:#21373f; color:#fff;}
+.select dd .stext li{ position:relative;}
+.select dd .stext b{ display:block; text-align:right; position:absolute; right:10px; top:2px; line-height:30px; font-weight:normal; font-size:12px; color:#666;}
+.select dt,.intext, .nav,.buffshow label{transition: all .3s;
+-moz-transition: all .3s;	/* Firefox 4 */
+-webkit-transition: all .3s;	/* Safari 和 Chrome */
+-o-transition: all .3s;	/* Opera */}
+
+.ddd{width:280px;  height: 36px; position:relative; margin-top: 12px; }
+.dname{ width:48px; float: left; height:auto; overflow:hidden; padding:10px 0 10px 0; position:relative; color:#b3b3b3;}
+.intext{width:160px;height:18px;display:inline-block;border:1px solid #333b47;background:#11171f url(02.png) no-repeat 165px center;padding:7px 10px;position:relative;z-index:99; font:14px/18px "Blizzard", "微软雅黑"; color:#ddd; position:relative; outline:none}
+.intext:focus, .intext:hover{border:1px solid #409DFE;box-shadow:0 0 3px #409DFE;}
+.inDiv b{ font:15px/32px Arial, Tahoma, "微软雅黑", "宋体", "黑体"; width:20px; height:32px; position:absolute; right:1px; top:1px; z-index:100; background-color:#11171F;}
+
+.dtitle{width:24px;opacity: 0.5; height:18px; background:#1D2633 url(01.png) right top no-repeat; position:absolute; z-index:109;  left:230px; top:8px;}
+.dtitle:hover{opacity: 1.0; height:38px;}
+.dtext{position:absolute; opacity: 0; transition: all 0.15s; width:200px; height:auto; right:24px; top:-8px; border:1px solid #333B47;z-index:110; padding:40px 16px 16px 16px; line-height:18px; font-size:12px; color:#999; background-color:#272e3b;box-shadow:0 0 2px #000; display:none;}
+.dtext span{line-height:20px; font-size:14px; color:#eee; display:block;  position:absolute; top:7px;  left:-1px; width:214px; height:20px;border-left:3px solid #5A616C; padding-left: 14px;}
+.dtext .ps{font:12px/18px "Blizzard", "微软雅黑"; color:#0DF;}
+.buffshow {  clear:both; }
+.buffshow input{ display:none;}
+.buffshow .ff{ background:url(fxkbg.png) -10px -32px no-repeat; width:66px; float:left; color:#fff; height:32px; padding-left:0px; position:relative; overflow:hidden;}
+.buffshow .ff:hover{ background-position:-10px -96px;}
+.buffshow .fz{ background-position:-10px 0}
+.buffshow .fz:hover{ background-position:-10px -64px;}
+.buffshow label{ padding-left:20px; width:80px; display:block; cursor:default;color:#757580;font:14px/32px "Blizzard", "微软雅黑";}
+.buffshow .fz label, .buffshow label:hover{ color:#d3d3d3;}
+
+.buffshow .zudui dt{width:102px; background: #11171f url(02.png) no-repeat 105px center;}
+.buffshow #jiban1{margin-left: 8px; position: absolute; left: 172px; top:0px; z-index: 100;}
+.buffshow .zudui dd ul{width:122px;}
+
+/*左侧等级相关输入*/
+.datalevel{float:left; width:639px; height: 480px;}
+.datalevel dl{margin: 0; padding: 0;}
+.datalevel dt,.datalevel dd{float: left;}
+
+.datalevel .starin{ padding-top: 0px; width: 649px; height: 360px; background: #11161f; border-bottom: 1px solid #33333f; padding-left: 0px; position: relative; }
+.datalevel .starin .part{width: 128px; border-left: 1px solid #222b3a; padding: 1px; padding:0 16.5px; float: left; height: 360px; position: relative;;}
+.datalevel .starin .part *{transition: all 0.2s;}
+.datalevel .starin .star5{border-left: none; margin-left: 1px;}
+.datalevel .starin .part .starintext{width: 120px; margin-left: 4px; height: 30px; line-height: 32px; opacity: 0.2; padding: 6px 0; margin-bottom: 1px; background: #171f2a; border: 1px solid #37404f;; position: relative; border-radius: 1px;}
+.datalevel .starin .part:hover{background: #141b26; background:linear-gradient(#1c2330, #11161f)}
+.datalevel .starin:hover .part .starintext{opacity: 0.5;}
+.datalevel .starin .part .starintext:hover{opacity: 1.0;background: #222b3a;}
+.datalevel .starin .part .starintexthot,.datalevel .starin .part .starintexthot:hover{opacity: 1.0 !important;background: #222b3a;border: 1px solid #67809f;}
+.datalevel .starin .part dt{height: 66px; width: 100%; text-align: center; line-height: 66px; font-size: 14px; font-weight: bolder;backg round: #222b3a;border: 1px solid transparent; border-bottom: none; bo rder-top: 2px solid #67809f; font-size: 16px;}
+.datalevel .starin .part div{float: left;}
+.datalevel .starin .part .starintext *{cursor: default;}
+.datalevel .starin .part .starintext span{ padding-top:12px; color: #bbb; position: absolute; font-size: 12px; line-height: 16px; font-weight: 400; margin-left: 10px;}
+.datalevel .starin .part .starintext span b{font-size: 16px; color: #fff;}
+.datalevel .starin .part .starintext i{font-size: 28px; color: #666; font-weight: 100; font-style:normal;position: absolute; top: 7px; right: 32px; display: none;}
+.datalevel .starin .part .starintext .lvfull{display: none;}
+.datalevel .starin .part .starintexthot .lvfull{width: 13px; height: 30px; background: url(full.png) center center no-repeat; position: absolute; right:-7px; top: 6px;transition :none;}
+.datalevel .starin .part .starintexthot .lvfull .fulltext{display: none; font-size: 10px;  line-height: 18px;width: 220px; padding: 0 15px 10px 15px; height: auto; overflow: hidden; position: absolute; left: 6px; top: -7px; border: 1px solid #67809f;background: #17212c; z-index: 999; color: #777;}
+.datalevel .starin .part .starintexthot .lvfull .fulltext span:after{ content:"注：基础式神数量已超限，部分基础式神的经验将按照狗粮式神计算";}
+.datalevel .starin .part .starintexthot .lvfull .fulltext span{display: block; width: 220px; margin:0 0 10px 0; border-bottom: 1px solid #333; height: 32px; line-height: 16px;  position: relative; color: #bdd; font-size: 12px; padding: 7px 0 6px 0;  }
+.datalevel .starin .part .starintexthot .lvfull i{display: none; width: 13px;position: absolute; height: 42px; left: 0px; top:-6px; background:#17212c url(full.png) center center no-repeat; z-index: 1000; }
+.datalevel .starin .part .starintexthot .lvfull:hover .fulltext,.datalevel .starin .part .starintexthot .lvfull:hover i{display: block; }
+
+
+.datalevel .starin .star4 .starintexthot .lvfull:hover .fulltext:after{ content:"　　目前，4星26-30级的式神（升5星的基础式神）已超出了总需求量，超出的这部分式神从作用上讲与25级的四星式神（升5星的狗粮式神）完全一样，因此，这部分式神的总经验含量也只能按照4星25级的式神来计算，其所含的25级之上的经验是无法纳入进度的。";}
+.datalevel .starin .star3 .starintexthot .lvfull:hover .fulltext:after{ content:"　　目前，3星21-25级的式神（升4星的基础式神）已超出了总需求量，超出的这部分式神从作用上讲与20级的三星式神（升4星的狗粮式神）完全一样，因此，这部分式神的总经验含量也只能按照3星20级的式神来计算，其所含的20级之上的经验是无法纳入进度的。";}
+.datalevel .starin .star2 .starintexthot .lvfull:hover .fulltext:after{ content:"　　目前，2星2-20级的式神（升3星的基础式神）已超出了总需求量，超出的这部分式神从作用上讲与1级的N卡（升2星的狗粮式神）完全一样，因此，这部分式神的总经验作用为0（只影响N卡狗粮需求量），不会对经验进度产生任何影响。";}
+
+.datalevel .starin .part .overflowType{opacity: 0; width: 142px; top:48px; position: absolute; text-align: center; left: 10px;}
+.datalevel .starin .part .overflowType b{color: #f55; font-weight: normal; font-size: 10px; }
+.datalevel .starin .part .overflowType span{color: #678; font-weight: normal; font-size: 10px; }
+/*
+.datalevel .starin .part .starintexterror{border: 1px solid #ff0;}
+*/
+.datalevel .starin .part .ssnum{width: 36px;display: none; font-size: 22px; height: 40px; background: transparent; border: none; color: #fff; text-align: center; position: absolute; top: 1px; right: 1px; cursor: pointer; color: #49576c; }
+.datalevel .starin .part .ssnum:hover,.datalevel .starin .part .ssnum:focus {background-color: #161f1e;}
+.datalevel .eggin{margin-left: 6px; margin-top: 12px; height: 96px;}
+.datalevel .eggin .partA,.datalevel .eggin .partB{ height: 80px; float: left; padding: 8px 3px; position: relative;}
+.datalevel .eggin .partA{padding: 8px 6px 8px 0;}
+.bdtype{top:6px;left: 123px; height: 18px !important;width: 18px; background-position: 1px 0px; border-radius: 10px; opacity: 0.75;}
+.bdtype .dtext{width: 450px; height: 42px; top:-9px; right: -494px; text-align: left;}
+.bdtype .dtext span{width: 100%;}
+.bdtype .dtext .bdtips{background:url(bdtips.png) center center no-repeat; width: 633px; height: 402px; position: absolute; bottom: 58px; left: -150px; opacity: 0.75;}
+.bdtype .dtext p{line-height: 20px;}
+.datalevel .eggin .partA{width: 150px; border-right:1px solid #222b3a; text-align: center; }
+.datalevel .eggin .partA .bdname{margin-bottom: 12px; display: inline-block; font-size: 14px; font-weight: normal; color: #fff;}
+.datalevel .eggin .partA .bz{margin-top: 6px; display: block; font-size: 12px; color: #667;}
+.datalevel .eggin .partB{padding-left: 22px;}
+#egginnum{background: #11171f; border:1px solid #333b47; width: 48px; height: 32px; text-align: center; color: #fff; font-size: 20px;}
+.datalevel .eggin .partB .eggnumshow{height: auto; overflow: hidden;}
+.datalevel .eggin .partB .eggnumshow .ensdiv{float: left; width: 90px; margin-right: 20px; border-radius: 2px; padding: 0 10px; height: 40px; line-height: 40px;  border: 1px solid #353549; background: #151522; text-align: center;}
+.datalevel .eggin .partB .eggnumshow .ensdivJ{float: left; width: 80px; line-height: 38px;}
+.datalevel .eggin .partB .expegggo{padding-top: 20px; width: 430px; }
+.datalevel .eggin .partB span{color: #92a674;margin:0 3px;}
+.datalevel .eggin .partB .expegggo span{color: #62c600; margin:0 6px; font-size: 20px;}
+
+.datalevel .starin .part .starintexthot .ssnum{display: block; background: #17212c; color: #9df; font-weight: 700;}
+
+.clearlv{width: 118px; height: 28px; line-height: 28px; font-size: 12px; display: block; bottom: 26px; left: 22px; position: absolute; background: #222b3a; text-align: center; opacity: 0.6;border: 1px solid transparent;}
+.clearlv:hover{border: 1px solid #49576c; opacity: 1.0;}
+.tip5x{font-size: 10px; color: #ddd; width: 120px; text-align: center; margin-left: 4px; margin-top: 6px; line-height: 16px; opacity: 0;transition: all 1.5s;}
+.part:hover .tip5x{opacity: 0.4;}
+.mouse{width: 118px; height: 62px;bottom: 56px;padding-top: 12px; left: 22px;position: absolute; background: url(mouse.png) left center no-repeat;opacity: 0.4;border: 1px solid transparent; cursor: default; }
+.mouse div{margin-left: 29px;  color: #82c630; font-size: 12px; line-height: 24px; margin-bottom: 4px;}
+.mouse div b{font-weight: 400; margin-right: 10px; color: #ddd;}
+.mouse:hover{ opacity: 0.8;}
+
+.starico{ background: url(starico1.png) left center no-repeat;opacity: 0.6; position: absolute; z-index: 10; width: 57px; height: 12px; left: 8px; top: 6px; }
+.si5{ background: url(starico1.png) -0px center no-repeat;}
+.si4{ background: url(starico1.png) -11px center no-repeat;}
+.si3{ background: url(starico1.png) -22px center no-repeat;}
+.si2{ background: url(starico1.png) -33px center no-repeat;}
+.datalevel .starin .part .starintexthot .starico{opacity: 1.0;}
+
+.exp{border-bottom: 1px solid #444; margin-top: 0;  background: #17212c; position: absolute; top:0; left: 0; width: 290px; height: 104px;}
+.exp *{transition: all 0.3s;}
+.expJD{width: 250px; border-radius: 1px; overflow: hidden; margin-left: 20px; position: relative; height: 18px; border:1px solid #67809f;}
+.expBFB{text-align: center;  font-weight: 700; height: 58px;font-size: 36px; line-height: 56px; padding-top: 10px;}
+.expBFB b{font-size: 36px; margin-right: 4px;}
+.expBFB b span{font-size: 20px;opacity: 0.6; font-weight: normal;}
+#expBFBdiv{opacity:1; transition: all 0.15s;}
+.expBFBJD{width: 0%; background: #414A69; height: 18px;}
+.expINFO{position: absolute; top: 0; line-height: 18px;width: 248px; text-align: center; font-size: 12px; color: #99D6Fc;}
+.expINFO b{font-weight: normal;}
+
+.showdata{position: absolute; bottom: 20px;  bor der-top: 1px solid #27313c; height: 148px; width: 280px; padding:12px 0px 0 8px; left: 0px;}
+.showdata *{cursor: default; transition:all 0.3s;}
+.showdata ul{width: 110px; float: left; margin-left: 2px;  height: 44px; padding: 6px 10px 0 10px; overflow: hidden;}
+.showdata ul li{width: 100%; height: 18px; line-height: 18px; font-size: 12px; color: #99a;}
+.showdata ul:hover{background: #111725; border-radius: 3px; }
+.showdata ul li.data{width: 100%;font-size: 16px; te xt-align: right;height: 20px;line-height: 20px;color: #fff;}
+.showdata ul li.data span{color: #79b6ec;; margin-right: 3px;  font-size: 20px;}
+.showdata ul:hover li.data span{color:#82c600}
+
+/*底部信息*/
+.Copyright{width:600px; position:fixed; bottom:20px; line-height:24px; left:50%; margin-left:-300px; text-align:center; color:#B3B3B3; font-size:16px; z-index:2; color:#999;}
+.Copyright a:link{color:#999;}
+.Copyright a:hover{color:#9ad;}
+
+.ceshi{width: 170px; padding-left: 10px; height: 170px; position: fixed; z-index: 10000000000; left: 50%; margin-left: -500px; top: 45%; line-height: 30px; background: #666; display: none;}
