@@ -8,9 +8,9 @@
 　　祝各位肝的开心，玩的愉快，一发入魂SSR~~
 　　彼岸星霜敬上。
 --------------------------------------------------------------------------------
-此计算器由彼岸星霜开发，我当时想算我肝狗粮需要多少体力，就找到了这位大佬开发的这个工具，
-奈何这个工具只停留在困22版本，无法用于现版本的计算，因此萌生了修改的想法。我在js以及html上都标明了原作者，
-没有植入广告以及收费，如果侵权了希望作者联系我（泥潭ID：60633818），我尽快rm -rf /*
+	此计算器由彼岸星霜开发，我当时想算我肝狗粮需要多少体力，就找到了这位大佬开发的这个工具，
+	奈何这个工具只停留在困22版本，无法用于现版本的计算，因此萌生了修改的想法。我在js以及html上都标明了原作者，
+	没有植入广告以及收费，如果侵权了希望作者联系我（泥潭ID：60633818），我尽快rm -rf /*
 */
 
 //输入框控制
@@ -351,6 +351,7 @@ function account(){
 	var checkbox3 = document.getElementById('buff_50');
 	var checkbox4 = document.getElementById('buff_100');
 	var checkbox5 = document.getElementById('buff_10_2');
+	var checkbox6 = document.getElementById('buff_20');
 	//var checkbox4 = document.getElementById('buff_100');
 	if(checkbox1.checked){var bf1=1.1;document.getElementById("buff1").className = 'ff fz';}
 		else{var bf1=1;document.getElementById("buff1").className = 'ff';}
@@ -362,7 +363,9 @@ function account(){
 		else{var bf4=1;document.getElementById("buff4").className = 'ff';}
 	if(checkbox5.checked){var bf5=1.1;document.getElementById("buff5").className = 'ff fz';}
 		else{var bf5=1;document.getElementById("buff5").className = 'ff';}
-	var fzbuff=bf1*bf2*bf3*bf4*bf5;
+	if(checkbox6.checked){var bf6=1.2;document.getElementById("buff6").className = 'ff fz';}
+		else{var bf6=1;document.getElementById("buff6").className = 'ff';}
+	var fzbuff=bf1*bf2*bf3*bf4*bf5*bf6;
 
 
 	//买体力
